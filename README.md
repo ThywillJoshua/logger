@@ -12,7 +12,7 @@ This Go library allows you to log entries to an AWS S3 bucket. The library provi
 Install dependency:
 
 ```bash
-git get https://github.com/thywilljoshua/logger.git
+git get https://github.com/thywilljoshua/logger
 ```
 
 ## Configuration
