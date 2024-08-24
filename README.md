@@ -12,7 +12,7 @@ This Go library allows you to log entries to an AWS S3 bucket. The library provi
 Install dependency:
 
 ```bash
-git get https://github.com/thywill/logger.git
+git get https://github.com/thywilljoshua/logger.git
 ```
 
 ## Configuration
@@ -45,9 +45,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/thywill/logger/config"
-	"github.com/thywill/logger/logger"
-	"github.com/thywill/logger/logentry"
+	"github.com/thywilljoshua/logger/config"
+	"github.com/thywilljoshua/logger/logger"
+	"github.com/thywilljoshua/logger/logentry"
 )
 
 func main() {

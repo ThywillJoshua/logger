@@ -1,4 +1,4 @@
-module github.com/thywill/logger
+module github.com/thywilljoshua/logger
 
 go 1.21.7
 

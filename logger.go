@@ -7,9 +7,9 @@ import (
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials"
 
-	loggerConfig "github.com/thywill/logger/config"
-	"github.com/thywill/logger/logentry"
-	"github.com/thywill/logger/s3"
+	loggerConfig "github.com/thywilljoshua/logger/config"
+	"github.com/thywilljoshua/logger/logentry"
+	"github.com/thywilljoshua/logger/s3"
 )
 
 type Logger struct {
