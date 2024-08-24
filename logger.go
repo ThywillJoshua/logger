@@ -25,9 +25,11 @@ func NewLogger(cfg *loggerConfig.Config) (*Logger, error) {
 			credentials.NewStaticCredentialsProvider(cfg.AWSAccessKeyID, cfg.AWSSecretAccessKey, ""),
 		),
 	)
+	
 	if err != nil {
 		return nil, err
 	}
+
 	client := s3.NewClient(awsConfig)
 	return &Logger{
 		s3Client:   client,
