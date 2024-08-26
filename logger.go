@@ -11,6 +11,7 @@ import (
 	loggerConfig "github.com/thywilljoshua/logger/config"
 	"github.com/thywilljoshua/logger/logentry"
 	"github.com/thywilljoshua/logger/s3"
+	"github.com/thywilljoshua/logger/utils"
 )
 
 type Logger struct {
@@ -39,15 +40,15 @@ func NewLogger(cfg *loggerConfig.Config) (*Logger, error) {
 
 func (l *Logger) UploadLog(ctx context.Context, entry logentry.LogEntry) error {
 	objectKey := fmt.Sprintf("%s%s%s%s%s%s%s%s%s",
-		entry.ServiceName+"/",
+	    utils.RemoveSlashesAndConvertToString(entry.ServiceName)+"/",
 		fmt.Sprintf("%02d/", entry.Timestamp.Year()),
 		fmt.Sprintf("%02d/", entry.Timestamp.Month()),
 		fmt.Sprintf("%02d/", entry.Timestamp.Day()),
-		entry.LogLevel+"/",
-		entry.CorrelationID+"-",
-		entry.HTTPMethod+"-",
-		entry.URL+"-",
-		fmt.Sprintf("%v-", entry.ResponseStatus),
+		utils.RemoveSlashesAndConvertToString(entry.LogLevel)+"/",
+		utils.RemoveSlashesAndConvertToString(entry.CorrelationID)+"-",
+		utils.RemoveSlashesAndConvertToString(entry.HTTPMethod)+"-",
+		utils.RemoveSlashesAndConvertToString(entry.URL)+"-",
+		utils.RemoveSlashesAndConvertToString(entry.ResponseStatus),
 	)
 
 	logData, err := json.Marshal(entry)
