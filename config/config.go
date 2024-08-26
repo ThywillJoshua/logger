@@ -7,7 +7,7 @@ type Config struct {
 	AWSSecretAccessKey string
 }
 
-func NewConfig(s3Bucket, awsRegion, awsAccessKeyID, awsSecretAccessKey string) *Config {
+func LoadConfig(s3Bucket, awsRegion, awsAccessKeyID, awsSecretAccessKey string) *Config {
 	return &Config{
 		S3Bucket:          s3Bucket,
 		AWSRegion:         awsRegion,

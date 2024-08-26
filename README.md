@@ -12,26 +12,17 @@ This Go library allows you to log entries to an AWS S3 bucket. The library provi
 Install dependency:
 
 ```bash
-git get https://github.com/thywilljoshua/logger
+go get github.com/thywilljoshua/logger
 ```
 
 ## Configuration
 
-Ensure the following environment variables are set with your AWS credentials and S3 bucket details:
+Ensure the following variables exists within your app:
 
 - `S3_BUCKET_NAME` - Name of the S3 bucket.
 - `AWS_REGION` - AWS region for the S3 bucket.
 - `AWS_ACCESS_KEY_ID` - Your AWS access key ID.
 - `AWS_SECRET_ACCESS_KEY` - Your AWS secret access key.
-
-You can set these in your terminal session:
-
-```bash
-export S3_BUCKET_NAME=my-bucket
-export AWS_REGION=us-east-1
-export AWS_ACCESS_KEY_ID=your-access-key-id
-export AWS_SECRET_ACCESS_KEY=your-secret-access-key
-```
 
 ## Usage
 
@@ -52,7 +43,7 @@ import (
 
 func main() {
 	// Load configuration
-	cfg := config.LoadConfig()
+	cfg := config.LoadConfig(S3_BUCKET_NAME, AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
 
 	// Initialize the logger
 	log, err := logger.NewLogger(cfg)
